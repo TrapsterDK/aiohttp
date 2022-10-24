@@ -125,7 +125,7 @@ class HeadersParser:
     def __init__(
         self,
         max_line_size: int = 8190,
-        max_field_size: int = 8190,
+        max_field_size: int = 65536,
     ) -> None:
         self.max_line_size = max_line_size
         self.max_field_size = max_field_size
@@ -220,7 +220,7 @@ class HttpParser(abc.ABC, Generic[_MsgT]):
         loop: asyncio.AbstractEventLoop,
         limit: int,
         max_line_size: int = 8190,
-        max_field_size: int = 8190,
+        max_field_size: int = 65536,
         timer: Optional[BaseTimerContext] = None,
         code: Optional[int] = None,
         method: Optional[str] = None,

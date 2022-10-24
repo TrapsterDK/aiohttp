@@ -58,7 +58,7 @@ def parser(loop: Any, protocol: Any, request: Any):
         loop,
         2**16,
         max_line_size=8190,
-        max_field_size=8190,
+        max_field_size=65536,
     )
 
 
@@ -76,7 +76,7 @@ def response(loop: Any, protocol: Any, request: Any):
         loop,
         2**16,
         max_line_size=8190,
-        max_field_size=8190,
+        max_field_size=65536,
     )
 
 
@@ -896,7 +896,7 @@ def test_parse_bad_method_for_c_parser_raises(loop: Any, protocol: Any) -> None:
         loop,
         2**16,
         max_line_size=8190,
-        max_field_size=8190,
+        max_field_size=65536,
     )
 
     with pytest.raises(aiohttp.http_exceptions.BadStatusLine):

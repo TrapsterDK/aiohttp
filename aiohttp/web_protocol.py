@@ -189,7 +189,7 @@ class RequestHandler(BaseProtocol):
         access_log: Logger = access_logger,
         access_log_format: str = AccessLogger.LOG_FORMAT,
         max_line_size: int = 8190,
-        max_field_size: int = 8190,
+        max_field_size: int = 65536,
         lingering_time: float = 10.0,
         read_bufsize: int = 2**16,
         auto_decompress: bool = True,
